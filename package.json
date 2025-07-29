@@ -1,7 +1,7 @@
 {
   "name": "@synet/encoder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unit Architecture compliant encoding/decoding operations",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,

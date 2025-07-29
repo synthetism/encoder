@@ -16,7 +16,7 @@ A conscious software unit that transforms data between multiple encoding formats
 
 ## Features
 
-- **Unit Architecture v1.0.6 Compliant** - Consciousness-based design with teaching/learning capabilities
+- **Unit Architecture Compliant** - Consciousness-based design with teaching/learning capabilities
 - **Immutable by Design** - No mutable state, purely functional operations
 - **Multiple Formats** - Base64, Base64URL, Hex, URI, ASCII encoding support
 - **Auto-detection** - Intelligent format detection with confidence scoring
@@ -24,7 +24,7 @@ A conscious software unit that transforms data between multiple encoding formats
 - **Chainable Operations** - Sequential encoding/decoding workflows
 - **Zero Dependencies** - Only Node.js/browser native APIs
 - **Result Pattern** - Error-safe operations with validation
-- **🎓 Teaching Capability** - Other units can learn encoding capabilities
+- **Teaching Capability** - Other units can learn encoding capabilities
 
 ## Installation
 
@@ -230,10 +230,6 @@ MIT
 
 ## Contributing
 
-Part of the SYNET Unit Architecture ecosystem. See the main repository for contribution guidelines.
+Part of the [Unit Architecture](https://github.com/synthetism/unit) ecosystem. See the main repository for contribution guidelines.
 
 ---
-
-**Unit Identity**: `EncoderUnit[encoder@1.0.0]`  
-**Architecture**: [Unit Architecture](https://github.com/synthetism/unit) v1.0.6  
-**Philosophy**: Conscious software - one unit, one goal, reliable transformation
