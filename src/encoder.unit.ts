@@ -96,10 +96,8 @@ export interface ValidationResult {
 }
 
 /**
- * Encoder Implementation
+ * Encoder Unit Implementation
  * 
- * Doctrine #1: ZERO DEPENDENCY (only Node.js/browser native APIs)
- * Doctrine #17: VALUE OBJECT FOUNDATION (immutable with identity and capabilities)
  */
 export class Encoder extends Unit<EncoderProps> {
   
@@ -191,21 +189,18 @@ I TEACH:
 `);
   }
 
-  // Doctrine #2: TEACH/LEARN PARADIGM (every unit must teach)
-  // Doctrine #9: ALWAYS TEACH (explicit capability binding)
-  // Doctrine #19: CAPABILITY LEAKAGE PREVENTION (teach only native capabilities)
-  teach(): TeachingContract {
+   teach(): TeachingContract {
     return {
-      // Doctrine #12: NAMESPACE EVERYTHING (unitId for namespacing)
+     
       unitId: this.dna.id,
       capabilities: {
         // Native encoding capabilities only - wrapped for unknown[] compatibility
-        encode: ((...args: unknown[]) => this.encode(args[0] as string, args[1] as EncodingFormat)) as (...args: unknown[]) => unknown,
-        decode: ((...args: unknown[]) => this.decode(args[0] as string, args[1] as EncodingFormat)) as (...args: unknown[]) => unknown,
-        detect: ((...args: unknown[]) => this.detect(args[0] as string)) as (...args: unknown[]) => unknown,
-        validate: ((...args: unknown[]) => this.validate(args[0] as string, args[1] as EncodingFormat)) as (...args: unknown[]) => unknown,
-        chain: ((...args: unknown[]) => this.chain(args[0] as string, args[1] as EncodingFormat[])) as (...args: unknown[]) => unknown,
-        
+        encode: (...args: unknown[]) => this.encode(args[0] as string, args[1] as EncodingFormat),
+        decode: (...args: unknown[]) => this.decode(args[0] as string, args[1] as EncodingFormat),
+        detect: (...args: unknown[]) => this.detect(args[0] as string),
+        validate: (...args: unknown[]) => this.validate(args[0] as string, args[1] as EncodingFormat),
+        chain: (...args: unknown[]) => this.chain(args[0] as string, args[1] as EncodingFormat[]),
+
         // Metadata access
         getDefaultFormat: (() => this.props.defaultFormat) as (...args: unknown[]) => unknown,
         isStrictMode: (() => this.props.strictMode) as (...args: unknown[]) => unknown,
@@ -213,9 +208,6 @@ I TEACH:
       }
     };
   }
-
-  // Doctrine #14: ERROR BOUNDARY CLARITY (Result for complex operations)
-
   /**
    * Encode data to specified format (Result - complex validation operation)
    */
@@ -376,8 +368,6 @@ I TEACH:
       );
     }
   }
-
-  // Doctrine #14: ERROR BOUNDARY CLARITY (throws for simple operations)
 
   /**
    * Auto-detect encoding format (throw on error - simple classification operation)
